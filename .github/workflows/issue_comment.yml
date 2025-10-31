@@ -10,5 +10,6 @@ jobs:
     steps:
       - name: Print Issue/PR Number and Comment
         run: |
+          echo "This is an issue/PR comment workflow."
           echo "Number: ${{ github.event.issue.number || github.event.pull_request.number }}"
           echo "Comment text: ${{ github.event.comment.body }}"
