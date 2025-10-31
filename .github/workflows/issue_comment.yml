@@ -1,0 +1,14 @@
+name: Issue/PR Comment Printer
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  print-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Issue/PR Number and Comment
+        run: |
+          echo "Number: ${{ github.event.issue.number || github.event.pull_request.number }}"
+          echo "Comment: ${{ github.event.comment.body }}"
